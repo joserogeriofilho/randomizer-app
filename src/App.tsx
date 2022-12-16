@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
+import { randomStory } from './services/story'
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -12,6 +14,8 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
+
+const story = randomStory()
 
 function App() {
   return (
@@ -40,6 +44,13 @@ function App() {
         </Grid>
         <Grid item xs={12} sm={8}>
           <Item elevation={4}>xs=8</Item>
+        </Grid>
+        <Grid item xs={12}>
+          <Item elevation={4}>
+            <p>Theme: {story.theme}</p>
+            <p>Main character: {story.mainCharacter}</p>
+            <p>Conflict: {story.conflict}</p>
+          </Item>
         </Grid>
       </Grid>
     </Container>
