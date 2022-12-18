@@ -3,7 +3,9 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
-export default function Main() {
+import { NavigationBar } from 'components'
+
+export const Main = () => {
   return (
     <Container
       maxWidth="md"
@@ -19,6 +21,9 @@ export default function Main() {
           height: '100%'
         }}
       >
+        <Grid item xs={12}>
+          <NavigationBar />
+        </Grid>
         <Grid item xs={12}>
           <p>Main screen</p>
         </Grid>

@@ -1,30 +1,29 @@
-import { RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { createBrowserRouter } from "react-router-dom";
+import { CharacterGenerator, Main, StoryGenerator } from "pages";
 
-import CharacterGenerator from "../pages/CharacterGenerator";
-import Main from "../pages/Main";
-import StoryGenerator from "../pages/StoryGenerator";
-
-const router = createBrowserRouter([
+export const routes = [
   {
+    name: "Main",
     path: "/",
     element: <Main />,
   },
   {
+    name: "Character Generator",
     path: "/char",
     element: <CharacterGenerator />,
   },
   {
+    name: "Story Generator",
     path: "/story",
     element: <StoryGenerator />,
   },
-], {
-  basename: '/randomizer-app'
-});
+]
 
-export default function Router() {
+export const Router = () => {
   return (
-    <RouterProvider router={router} />
+    <RouterProvider
+      router={ createBrowserRouter(routes, { basename: '/' }) }
+    />
   )
 }

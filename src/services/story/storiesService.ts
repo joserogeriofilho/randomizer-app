@@ -6,18 +6,14 @@ type Story = {
   conflict: string;
 };
 
-const themes = data.themes;
-const mainCharacters = data.mainCharacters;
-const conflicts = data.conflicts;
-
-const randomItem = (ar: Array<any>): string => {
+const randomItem = (ar: Array<string>): string => {
   return ar[Math.floor(Math.random() * ar.length)];
 };
 
 export const randomStory = (): Story => {
   return {
-    theme: randomItem(themes),
-    mainCharacter: randomItem(mainCharacters),
-    conflict: randomItem(conflicts),
+    theme: randomItem(data.themes),
+    mainCharacter: randomItem(data.mainCharacters),
+    conflict: randomItem(data.conflicts),
   };
 };
