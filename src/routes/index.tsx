@@ -1,25 +1,21 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import { CharacterGenerator, Main, StoryGenerator } from "pages";
-
-const baseUrl = process.env.REACT_APP_FOR_PATH
-
-console.log('######## baseUrl', baseUrl);
 
 export const routes = [
   {
     name: "Main",
-    path: baseUrl + "/",
+    path: "/",
     element: <Main />,
   },
   {
     name: "Character Generator",
-    path: baseUrl + "/char",
+    path: "/char",
     element: <CharacterGenerator />,
   },
   {
     name: "Story Generator",
-    path: baseUrl + "/story",
+    path: "/story",
     element: <StoryGenerator />,
   },
 ]
@@ -27,7 +23,7 @@ export const routes = [
 export const Router = () => {
   return (
     <RouterProvider
-      router={ createBrowserRouter(routes, { basename: baseUrl }) }
+      router={ createHashRouter(routes, { basename: '' }) }
     />
   )
 }
