@@ -15,7 +15,7 @@ export const NavigationBar = () => {
     >
       {routes.map((item, index) => {
         return (
-          <Link href={item.path} underline="hover" key={index}>{item.name}</Link>
+          <Link href={'/randomizer-app' + item.path} underline="hover" key={index}>{item.name}</Link>
         )}
       )}
       <p></p>
