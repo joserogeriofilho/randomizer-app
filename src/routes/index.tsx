@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import { CharacterGenerator, Main, StoryGenerator } from "pages";
 
@@ -23,7 +23,7 @@ export const routes = [
 export const Router = () => {
   return (
     <RouterProvider
-      router={ createBrowserRouter(routes, { basename: '/' }) }
+      router={ createHashRouter(routes, { basename: '/' }) }
     />
   )
 }
